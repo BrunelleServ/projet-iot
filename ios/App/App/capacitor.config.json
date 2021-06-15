@@ -1,0 +1,6 @@
+{
+	"appId": "com.ou.app",
+	"appName": "oui",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,46 @@
+<ion-header>
+
+
+    <ion-row id="Menu">
+        <ion-col (click)="goToHomeCourse()" size="2">
+            <ion-icon id="iconMenu" name="menu"></ion-icon>
+
+        </ion-col>
+        <ion-col size="8">
+            <h5 id="titre">Modification du Profil</h5>
+        </ion-col>
+        <ion-col (click)="goToMenu()" size="2">
+            <ion-icon id="fleche" name="arrow-back"></ion-icon>
+        </ion-col>
+
+    </ion-row>
+
+</ion-header>
+
+<ion-content *ngIf="loaded" style="border: none !important;">
+
+    <div style="text-align: center; margin-top: 20px;">
+        <img style="width: 30%;" src="assets/icon/logo.png">
+    </div>
+
+    <div id="container">
+        <ion-list style="margin-top: 10px;">
+            <ion-label fixed>Nom</ion-label>
+            <ion-input type="text" value="" style="border: 1px solid grey; border-radius: 20px; margin-bottom: 20px; background-color: #EAEAEA; padding-left: 18px !important; padding-right: 18px !important;" [(ngModel)]="user.username"></ion-input>
+            <ion-label fixed>Email</ion-label>
+            <ion-input type="email" value="" style="border: 1px solid grey; border-radius: 20px; margin-bottom: 20px; background-color: #EAEAEA; padding-left: 18px !important; padding-right: 18px !important;" [(ngModel)]="user.email" placeholder="{{user.email}}"></ion-input>
+            <ion-label fixed>Mot de Passe</ion-label>
+            <ion-input type="password" value="" style="border: 1px solid grey; border-radius: 20px; margin-bottom: 20px; background-color: #EAEAEA; padding-left: 18px !important; padding-right: 18px !important;" [(ngModel)]="user.password"></ion-input>
+            <ion-label fixed>Taille <small>(en cm)</small></ion-label>
+            <ion-input type="text" value="" style="border: 1px solid grey; border-radius: 20px; margin-bottom: 20px; background-color: #EAEAEA; padding-left: 18px !important; padding-right: 18px !important;" [(ngModel)]="user.adresse"></ion-input>
+            <ion-label fixed>Poids <small>(en kg)</small></ion-label>
+            <ion-input type="text" value="" style="border: 1px solid grey; border-radius: 20px; margin-bottom: 20px; background-color: #EAEAEA; padding-left: 18px !important; padding-right: 18px !important;" [(ngModel)]="user.description"></ion-input>
+        </ion-list>
+        <section (click)="goToMenuModif()" style="margin-top: 20px;">
+            <ion-button expand="full" size="large" color="#E48234" style="color: #ffffff; background: #7F21A0; border-radius: 10px;">Valider</ion-button>
+        </section>
+    </div>
+
+
+
+</ion-content>

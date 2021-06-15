@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-row id="Menu">
+        <ion-col (click)="goToMenu()" size="2">
+            <ion-icon id="avatar" name="person-circle"></ion-icon>
+
+        </ion-col>
+        <ion-col size="8">
+            <div style="text-align: center;">
+                <h5 id="titre">SportPerformance</h5>
+            </div>
+
+        </ion-col>
+        <ion-col (click)="goToHistoric()" size="2">
+
+            <ion-icon id="course" name="bookmark"></ion-icon>
+
+        </ion-col>
+
+
+
+    </ion-row>
+</ion-header>
+
+<ion-content>
+
+
+
+    <div style="opacity: 0.5;" id="map_canvas">
+        <google-map  [center]="center" [zoom]="zoom" (mapClick)="addMarker($event)" (mapMousemove)="move($event)" (mapRightclick)="removeLastMarker()">
+            <map-info-window>Info Window content</map-info-window>
+        </google-map>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="floating" (click)="goToCourse()" style="height: 200px; border: 10px solid #0000001c;; border-radius: 1000px; width: 200px; margin: auto; margin-top: 50%; text-align: center;  background-color: #7F21A0; color: #ffffff; font-weight: 600;">
+        <h1 style="margin-top: 38%;
+        margin-right: 6px;
+        font-size: 41px;
+        font-style: italic;
+        font-weight: 700;">GO RUN</h1>
+    </div>
+
+
+
+    <ion-button (click)="startScan()" style="position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+    left: 10px;" color="medium">Activer Bluetooth</ion-button>
+
+ 
+<ion-button *ngIf="ble != null" style="position: absolute;
+bottom: 0;
+margin-bottom: 15px;
+right: 10px;" color="primary">Connecté à {{ble.name == '' ? Inconnu : ble.name}}</ion-button>
+<ion-button *ngIf="ble == null" style="position: absolute;
+bottom: 0;
+margin-bottom: 15px;
+right: 10px;" color="danger">Non connecté</ion-button>
+
+</ion-content>

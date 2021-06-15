@@ -1,0 +1,39 @@
+<ion-content>
+    <ion-header class="ion-no-border">
+        <ion-toolbar class="ion-toolbar">
+            <ion-icon (click)="goToHome()" style="color: black !important; margin-top: 24px; margin-left: 24px !important;" name="arrow-back-outline"></ion-icon>
+        </ion-toolbar>
+    </ion-header>
+    <h5 style="color: #E48234; font-size: 40px; font-weight: 200; text-align: center; margin-top: 40px;">Inscrivez-vous</h5>
+    <ion-list style=" margin-top: 20px; margin-right: 15px; margin-left: 15px;" lines="full" class="ion-no-margin">
+        <ion-item>
+            <ion-label position="floating">
+                <ion-icon style="margin-right: 15px; margin-left: 0px !important;" name="person"></ion-icon>Identifiant</ion-label>
+            <ion-input placeholder="placeholder" type="text" [(ngModel)]="identifiant"></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 20px;">
+            <ion-label position="floating">
+                <ion-icon style="margin-right: 15px; margin-left: 0px !important;" name="mail"></ion-icon>Adresse e-mail</ion-label>
+            <ion-input placeholder="placeholder" type="email" [(ngModel)]="adressemail"></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 20px;">
+            <ion-label position="floating">
+                <ion-icon style="margin-right: 15px; margin-left: 0px !important;" name="key"></ion-icon>Mot de Passe</ion-label>
+            <ion-input placeholder="placeholder" type="password" [(ngModel)]="motdepasse"></ion-input>
+        </ion-item>
+    </ion-list>
+    <section>
+        <ion-button (click)="goToHomeCourse()" [disabled]="identifiant == '' || adressemail == '' || motdepasse ==''" expand="full" size="large" color="#E48234" style="color: #ffffff; background: #E48234;">S'inscrire</ion-button>
+    </section>
+    <div (click)="goToConnect()" style="text-align: center; margin-top: 25px;">
+        <p style="color: #7F21A0; font-style: italic;">Déja un compte? Viens te connecter</p>
+    </div>
+    <ion-grid>
+        <ion-row>
+            <ion-icon style="margin-right: 40px; margin-left: 40px;" name="logo-facebook"></ion-icon>
+            <ion-icon style="margin-right: 40px; margin-left: 40px;" name="logo-twitter"></ion-icon>
+            <ion-icon style="margin-right: 40px; margin-left: 40px;" name="logo-google"></ion-icon>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

@@ -1,0 +1,37 @@
+ion-content {
+    --ion-background-color: #EAEAEA !important;
+}
+
+.ion-toolbar {
+    --background: #EAEAEA !important;
+}
+
+ion-icon {
+    margin-left: 10px !important;
+    color: #7F21A0;
+    font-size: 20px;
+}
+
+.item-interactive {
+    --highlight-color-focused: black !important;
+    --highlight-color-text-focuse: black !important;
+}
+
+ion-item.item-has-focus>ion-label {
+    color: #000000 !important;
+}
+
+section {
+    margin-top: 15%;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+ion-button {
+    border-radius: 4px;
+}
+
+ion-row {
+    margin-top: 7%;
+    margin-left: 26%;
+}

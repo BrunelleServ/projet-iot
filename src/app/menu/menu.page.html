@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border">
+
+    <div id="iconMenu">
+        <ion-icon (click)="goToHomeCourse()" name="menu"></ion-icon>
+    </div>
+
+</ion-header>
+
+<ion-content *ngIf="loaded">
+
+    <div style="text-align: center;">
+
+        <img style="width: 50%;" src="assets/icon/logo.png">
+
+        <h1 id="nomPrenom">{{user.username}}</h1>
+        <h5 id="adresse"><b>Taille</b> : {{user.adresse}} cm</h5>
+        <h5 id="adresse"><b>Poids</b> : {{user.description}} kg</h5>
+
+    </div>
+    <div style="text-align: center;">
+        <ion-button (click)="goToModif()" expand="full" size="large" color="#E48234" style="color: #ffffff; background: #5A5959; margin-top: 60px !important;">Modifier Profil</ion-button>
+        <ion-button (click)="goToHistoric()" expand="full" size="large" color="#E48234" style="color: #ffffff; background: #5A5959;">Courses Enregistrées</ion-button>
+        <ion-button (click)="goToHome()" expand="full" size="large" color="#E48234" style="color: #ffffff; background: red;">Déconnexion</ion-button>
+    </div>
+
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+
+    <div id="iconMenu">
+        <ion-icon (click)="goToHomeCourse()" name="arrow-back-outline"></ion-icon>
+    </div>
+
+</ion-header>
+
+<ion-content >
+  <p style="color: #E48234; font-weight: 600; text-align: center;" *ngIf="isConnected">
+    Connecté à {{ble.name}} <br>
+    <ion-button (click)="disconect(ble.id)" color="medium">Déconnexion</ion-button>
+  </p>
+    <p  *ngIf="!isLoading" style="    text-align: center;
+    font-size: 1.4rem;">Scan d'appareils ...</p>
+    <p *ngIf="isLoading" style="    text-align: center;
+    font-size: 1.4rem;">Scan fini</p>
+    
+
+        <!-- <ion-list *ngIf="isLoading">
+            <ion-item *ngFor="let device of devices">
+              <ion-label>{{device.deviceId}}</ion-label>
+            </ion-item>
+        </ion-list>  -->
+
+        <ion-list *ngIf="isLoading">
+            <ion-item *ngFor="let device of devices">
+              <ion-label>
+                <h2>ID: {{device.device.deviceId}}</h2>
+                <h2>NOM: {{device.device.name}}</h2>
+                <p>RSSI: {{device.rssi}}</p>
+                <ion-button *ngIf="!step2 || device.device.deviceId != deviceIdSelected" color="primary" (click)="connect(device.device.deviceId, device.device.name)">Connexion</ion-button>
+                <span *ngIf="step2 && device.device.deviceId == deviceIdSelected" style="	margin: 0px; padding-top: 60px; margin-right: 15px;"><b>Connecté.</b></span>
+                <ion-button *ngIf="step2 && device.device.deviceId == deviceIdSelected" style="	margin: 0px; margin-top: 30px; margin-bottom: 20px; margin-right: 15px;" (click)="read(device.device.deviceId)" color="danger">Read</ion-button>
+                <ion-button *ngIf="step2 && device.device.deviceId == deviceIdSelected" style="	margin: 0px; margin-top: 30px; margin-bottom: 20px; margin-right: 15px;" (click)="write(device.device.deviceId)" color="warning">Write</ion-button>
+                <span *ngIf="isLoadingg && device.device.deviceId == deviceIdSelected" style="	margin: 0px; padding-top: 60px; margin-right: 15px;"><small>en cours...</small></span>
+                <p *ngIf="readDisplay && device.device.deviceId == deviceIdSelected">
+                  Valeurs READ: {{readValue}}
+                </p>
+                <p *ngIf="writeDisplay && device.device.deviceId == deviceIdSelected">
+                  Valeurs WRITE: {{writeValue}}
+                </p>
+              </ion-label>
+            </ion-item>
+        </ion-list> 
+
+</ion-content>

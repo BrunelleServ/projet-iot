@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar style="color: #ffffff;">
+        <ion-title>Ajouter un commentaire</ion-title>
+        <ion-icon id="quitter" (click)="closeModal()" name="close" size="2"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <section style="margin: 30px;">
+        <ion-label position="stacked">Commentaire</ion-label>
+        <ion-textarea [(ngModel)]="commentaire" style=" border: 1px solid #7F21A0 !important; border-radius: 10px; padding-left: 18px; padding-right: 18px;"></ion-textarea>
+    </section>
+    <section (click)="valider()" style="margin-top: 20px;">
+        <ion-button expand="full" size="large" color="#E48234" style="color: #ffffff; background: #E48234; border-radius: 10px;">Valider</ion-button>
+    </section>
+
+
+
+
+
+</ion-content>
